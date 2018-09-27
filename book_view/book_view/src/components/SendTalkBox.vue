@@ -30,15 +30,15 @@
     },
     methods: {
       send_mail (event) {
-        let send_data = {
+        let sendData = {
           token: localStorage.token,
           user_id: localStorage._id,
           toUserName: this.toUserName,
           title: this.title,
-          context: this.context,
+          context: this.context
 
         }
-        this.$http.post('http://localhost:3000/users/sendEmail', send_data).then((data) => {
+        this.$http.post('http://localhost:3000/users/sendEmail', sendData).then((data) => {
           if (data.body.status == 1) {
             alert(data.body.message)
           } else {
