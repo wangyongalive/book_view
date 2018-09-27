@@ -4,7 +4,9 @@
     <div>
       <p class="imgTitle">{{recommendTitle}}</p>
       <a v-bind:href=recommendSrc>
-        <img v-bind:src=recommendImg class="headerImg"/>
+        <img
+          v-bind:src=recommendImg
+          class="headerImg"/>
       </a>
     </div>
   </div>

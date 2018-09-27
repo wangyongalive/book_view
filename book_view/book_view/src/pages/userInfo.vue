@@ -78,15 +78,15 @@
           } else {
             this.detail = data.body.data
             if (data.body.data.userStop) {
-              this.userStatus = "用户已经被封停"
+              this.userStatus = '用户已经被封停'
             } else {
-              this.userStatus = "用户状态正常"
+              this.userStatus = '用户状态正常'
             }
           }
           console.log(data.body.data)
         })
       } else {
-        alert("用户信息错误")
+        alert('用户信息错误')
       }
     },
     methods: {
@@ -109,7 +109,7 @@
             this.$router.go(-1)
           }
         })
-      },
+      }
     }
   }
 </script>

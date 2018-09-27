@@ -40,10 +40,10 @@
           if (data.body.status == 1) {
             alert(data.body.message)
           } else {
-            let save_token = {
-              token: data.body.data.token,
-              username: this.username
-            }
+            // let save_token = {
+            //   token: data.body.data.token,
+            //   username: this.username
+            // }
             localStorage.setItem('token', data.body.data.token)
             localStorage.setItem('username', data.body.data.user[0].username)
             localStorage.setItem('_id', data.body.data.user[0]._id)

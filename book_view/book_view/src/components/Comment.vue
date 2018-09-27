@@ -39,20 +39,20 @@
     },
     methods: {
       send_comment (event) {
-        let send_data
-        if (typeof(localStorage.username) != "undefined") {
-          send_data = {
+        let sendData
+        if (typeof (localStorage.username) != 'undefined') {
+          sendData = {
             movie_id: this.movie_id,
             context: this.context,
             username: localStorage.username
           }
         } else {
-          send_data = {
+          sendData = {
             movie_id: this.movie_id,
             context: this.context
           }
         }
-        this.$http.post('http://localhost:3000/users/postCommment', send_data).then((data) => {
+        this.$http.post('http://localhost:3000/users/postCommment', sendData).then((data) => {
           alert(data.body.message)
         })
       }

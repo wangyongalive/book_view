@@ -20,7 +20,7 @@ import MovieIndexHeader from '../components/MovieIndexHeader'
 import CommonFooter from '../components/commonFooter'
 import Comment from '../components/Comment.vue'
 
-let article_id = 0
+let articleId = 0
 export default {
   name: 'NewDetail',
   data () {
@@ -38,9 +38,9 @@ export default {
 //  这里用于获取数据，需要获得主页推荐，主页新闻列表，主页电影列表
   created () {
 //    this.$route.query.id
-    article_id = this.$route.query.id
-    this.article_id = article_id
-    this.$http.post('http://localhost:3000/articleDetail',{article_id: article_id}).then((data) => {
+    articleId = this.$route.query.id
+    this.article_id = articleId
+    this.$http.post('http://localhost:3000/articleDetail',{article_id: articleId}).then((data) => {
       this.detail = data.body.data[0]
       this.detail.articleTime = new Date(parseInt(this.detail.articleTime)).toLocaleString()
 //      console.log( data.body.data)

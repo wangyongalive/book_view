@@ -2,7 +2,9 @@
 <template lang="html">
   <li class="goods-list">
     <div class="newsList">
-      <router-link :to="{path: '/newDetail', query:{ id: id }}" class="goods-list-link">  <!--  这个是用来跳转页面的，可以理解为a标签 -->
+      <router-link
+        :to="{path: '/newDetail', query:{ id: id }}"
+        class="goods-list-link">  <!--  这个是用来跳转页面的，可以理解为a标签 -->
         {{articleTitle}}
         {{articleTimeShow}}
       </router-link>

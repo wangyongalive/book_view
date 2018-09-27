@@ -34,13 +34,13 @@
   import CommonFooter from '../components/commonFooter'
   import Comment from '../components/Comment.vue'
 
-  let movie_id = 0
+  let movieId = 0
   export default {
     name: 'MovieDetail',
     data () {
       return {
         detail: [],
-        movie_id: ''
+        movieId: ''
       }
     },
     components: {
@@ -53,19 +53,19 @@
     created () {
 //    this.$route.query.id
       this.movie_id = this.$route.query.id
-      movie_id = this.$route.query.id
-      this.$http.post('http://localhost:3000/movie/detail', {id: movie_id}).then((data) => {
+      movieId = this.$route.query.id
+      this.$http.post('http://localhost:3000/movie/detail', {id: movieId}).then((data) => {
         this.detail = data.body.data
 //      console.log( data.body.data)
       })
     },
     methods: {
       support: function (event) {
-        this.$http.post('http://localhost:3000/movie/support', {id: movie_id}).then((data1) => {
+        this.$http.post('http://localhost:3000/movie/support', {id: movieId}).then((data1) => {
           let data_temp = data1.body
           let that = this
           if (data_temp.status === 0) {
-            this.$http.post('http://localhost:3000/movie/showNumber', {id: movie_id}).then((data2) => {
+            this.$http.post('http://localhost:3000/movie/showNumber', {id: movieId}).then((data2) => {
               that.detail['movieNumSuppose'] = data2.body.data.movieNumSuppose
             })
           } else {
@@ -75,7 +75,7 @@
       },
 //    电影下载
       movieDownload: function (event) {
-        this.$http.post('http://localhost:3000/movie/download', {movie_id: movie_id}).then((data1) => {
+        this.$http.post('http://localhost:3000/movie/download', {movie_id: movieId}).then((data1) => {
           if (data1.status == 1) {
             alert(data1.message)
           } else {

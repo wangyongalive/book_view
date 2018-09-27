@@ -58,19 +58,19 @@
 //  这里用于获取数据，需要获得主页推荐，主页新闻列表，主页电影列表
     created () {
       let userId = localStorage._id
-      let send_data = {
+      let sendData = {
         token: localStorage.token,
         user_id: localStorage._id,
         receive: 0
       }
-      let receive_data = {
+      let receiveData = {
         token: localStorage.token,
         user_id: localStorage._id,
         receive: 1
       }
 
       if (userId) {
-        this.$http.post('http://localhost:3000/users/showEmail', send_data).then((data) => {
+        this.$http.post('http://localhost:3000/users/showEmail', sendData).then((data) => {
           if (data.body.status == 1) {
             alert(data.body.message)
           } else {
@@ -78,7 +78,7 @@
           }
           console.log(data.body.data)
         })
-        this.$http.post('http://localhost:3000/users/showEmail', receive_data).then((data) => {
+        this.$http.post('http://localhost:3000/users/showEmail', receiveData).then((data) => {
           if (data.body.status == 1) {
             alert(data.body.message)
           } else {
